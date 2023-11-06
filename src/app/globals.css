@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +24,57 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+.animate-waving-hand {
+  animation: wave 2s ease-in-out infinite;
+}
+@keyframes wave {
+  0% {
+    transform: rotate(0deg); /* Starting position */
+  }
+  25% {
+    transform: rotate(20deg); /* Moving the hand */
+  }
+  50% {
+    transform: rotate(0deg); /* Back to initial position */
+  }
+  75% {
+    transform: rotate(-20deg); /* Moving the hand the other way */
+  }
+  100% {
+    transform: rotate(0deg); /* Back to the initial position */
+  }
+}
+
+@keyframes rainArrow {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.animate-rain-arrow {
+  animation: rainArrow 2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.95);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
 }
